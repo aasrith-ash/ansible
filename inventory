@@ -1,0 +1,8 @@
+[webservers]
+34.209.244.39
+
+[database]
+54.190.55.73
+
+[all:vars]
+ansible_user=ec2-user
