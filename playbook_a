@@ -9,14 +9,14 @@
     tasks:
 
      - name: Task 1
-       debug: msg= "The values in the arr "
-       with_items: "{{  package }}"
-#       yum:
-#         name: "{{ package }}"
-#         state: latest
-#       when: ansible_distribution == "Amazon"
-#       register: hostinfo
-#     - debug: var=hostinfo
+#       debug: msg= "The values in the arr "
+#       with_items: "{{  package }}"
+       yum:
+         name: "{{ package }}"
+         state: latest
+       when: ansible_distribution == "Amazon"
+       register: hostinfo
+     - debug: var=hostinfo
 
 #play 2
   - name: Second play on webserver 34
@@ -27,11 +27,11 @@
 
     tasks:
      - name: Task 1 of play 2
-       debug: msg= "The values in the array are {{ item[1] }}"
-       with_items: "{{  package }}"
-#       yum: 
-#         name: "{{ package }}"
-#         state: latest
-#       when: ansible_distribution == "Amazon"
-#       register: hostinfo
-#     - debug: var=hostinfo
+#       debug: msg= "The values in the array are {{ item[1] }}"
+#       with_items: "{{  package }}"
+       yum: 
+         name: "{{ package }}"
+         state: latest
+       when: ansible_distribution == "Amazon"
+       register: hostinfo
+     - debug: var=hostinfo
